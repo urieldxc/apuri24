@@ -45,7 +45,7 @@ export const Searchbar = ({ animeList, setSearchInput: string }): JSX.Element =>
                                 <img src={option.image} width={"50px"} />
                                 <Typography>
                               {option.title} 
-                                </Typography>
+                                </Typography> 
                             </Box>
                           )}
                           
