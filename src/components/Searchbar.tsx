@@ -12,7 +12,7 @@ type SearchBarInput = {
 
 // PENDIENTE DE REFACTORIZAR EL FUNCIONAMIENTO
 
-export const Searchbar = ({ animeList, setSearchInput: string }): JSX.Element => {
+export const Searchbar = ({ animeList: animeList, setSearchInput: string }): JSX.Element => {
 
     const [searchTerms, setSearchTerms] = useState()
 
@@ -33,22 +33,21 @@ export const Searchbar = ({ animeList, setSearchInput: string }): JSX.Element =>
     return (
         <>
             <Box>
-                <form onSubmit={handleSubmit} style={{ display: 'flex', alignItems: "center" }}>
+                <form onSubmit={handleSubmit} style={{ display: 'flex', alignItems: "center", gap: "10px" }}>
                     <Autocomplete
                         disablePortal
                         options={animeList}
                         id="autocomplete-list"
                         renderInput={(params) => <TextField {...params} label="Search an anime..." onChange={e => handleChange(e)}/>}
-                        getOptionLabel={(option) => option.title || ""}
+                        getOptionLabel={(option: any) => option.title || ""}
                         renderOption={(props, option) => (
                             <Box component='li' {...props} gap={2}>
                                 <img src={option.image} width={"50px"} />
-                                <Typography>
+                                <Typography >
                               {option.title} 
-                                </Typography> 
+                                </Typography>
                             </Box>
                           )}
-                          
                         fullWidth
                         freeSolo
                     >

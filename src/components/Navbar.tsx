@@ -39,7 +39,7 @@ export const Navbar = () => {
 
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
+            <AppBar position="static" sx={{ padding: "10px 0 10px 0"}}>
                 <Toolbar>
                     <Typography alignSelf={'center'} variant="h6" component="div" sx={{ flexGrow: 1 / 2 }}>
                         APURI
