@@ -5,7 +5,7 @@ export const CharacterCard = ({ char, index }) => {
     <Stack
       direction={"row"}
       justifyContent={"end"}
-      style={{ height: "200px", position: "relative" }}
+      style={{ height: "200px", width: "200px", position: "relative" }}
     >
       {/* Stack para el número y el nombre */}
       <Stack
@@ -16,12 +16,12 @@ export const CharacterCard = ({ char, index }) => {
           width: "auto",
           transform: "rotate(-90deg)",
           position: "absolute",
-          left: "-20px",
-          bottom:"65px",
+          left: "-75px",
+          bottom:"25px",
           alignItems: "center"
         }}
       >
-        <Typography sx={{ fontWeight: 600, fontSize: "1.5rem", transform: "rotate(90deg)" }}>
+        <Typography sx={{ fontWeight: 600, fontSize: "1.5rem", transform: "rotate(90deg)", color: "#dda15e" }}>
           {`0${index + 1}`}
         </Typography>
         <Typography
@@ -38,7 +38,7 @@ export const CharacterCard = ({ char, index }) => {
       </Stack>
       
       {/* Imagen */}
-      <img width={"60%"} src={char.images.webp.image_url} />
+      <img width={"80%"} style={{height: "120%"}} src={char.images.webp.image_url} />
     </Stack>
   );
 };

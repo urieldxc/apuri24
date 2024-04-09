@@ -5,7 +5,7 @@ export const HorizontalAnimeCard = ({anime}) => {
   return (
     <Box
             component={"li"}
-            style={{ textDecoration: "none", margin: "20px 0px 20px 0px" }}
+            style={{ textDecoration: "none", margin: "20px -30px 20px -30px" }}
             key={crypto.randomUUID()}
           >
             <Stack direction={"row"} alignContent={"center"}>
@@ -37,7 +37,7 @@ export const HorizontalAnimeCard = ({anime}) => {
                       borderRadius: "10px 0px 0px 10px",
                     }}
                   >
-                    <Typography>{anime.score}</Typography>
+                    <Typography sx={{ color: "black"}}>{anime.score}</Typography>
                   </Box>
                   <Box
                     py={0.5}
@@ -47,13 +47,13 @@ export const HorizontalAnimeCard = ({anime}) => {
                       borderRadius: "0px 10px 10px 0px",
                     }}
                   >
-                    <Typography>{anime.year || "Unknown"}</Typography>
+                    <Typography sx={{ color: "black"}}>{anime.year || "Unknown"}</Typography>
                   </Box>
                 </Stack>
               </Stack>
             </Stack>
 
-            <Divider sx={{ marginTop: "20px" }} />
+            <Divider sx={{ marginTop: "20px" }} color="#fefae0" />
           </Box>
   )
 }

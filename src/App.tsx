@@ -11,7 +11,7 @@ import { Box, CssBaseline } from '@mui/material';
 
 function App() {
   return (
-    <Box sx={{backgroundColor: "#111111", color: "white"}}>
+    <Box sx={{backgroundColor: "#252422"}}>
     <CssBaseline />
       <Home />
     </Box>

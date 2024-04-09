@@ -4,25 +4,25 @@ import { TopQuery } from "./TopQuery";
 const queryChecker = (query): string | any => {
   if (query === "airing") {
     return (
-      <Typography variant="h5" style={{ fontWeight: 600 }}>
+      <Typography variant="h5" style={{ fontWeight: 600, color: "#dda15e" }}>
         Top Airing
       </Typography>
     );
   } else if (query === "upcoming") {
     return (
-      <Typography variant="h5" style={{ fontWeight: 600 }}>
+      <Typography variant="h5" style={{ fontWeight: 600 , color: "#dda15e"}}>
         Most Popular
       </Typography>
     );
   } else if (query === "bypopularity") {
     return (
-      <Typography variant="h5" style={{ fontWeight: 600 }}>
+      <Typography variant="h5" style={{ fontWeight: 600, color: "#dda15e" }}>
         Most Favorite
       </Typography>
     );
   } else {
     return (
-      <Typography variant="h5" style={{ fontWeight: 600 }}>
+      <Typography variant="h5" style={{ fontWeight: 600, color: "#dda15e" }}>
         Last Completed
       </Typography>
     );

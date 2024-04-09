@@ -7,10 +7,23 @@ export const TopCharacters = () => {
   const [topCharacters, setTopCharacters] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("https://api.jikan.moe/v4/top/characters?limit=6")
-      .then((response) => setTopCharacters(response.data.data));
+    const timer = setTimeout(async () => {
+      const fetchData = async () => {
+        try {
+          const response = await axios.get("https://api.jikan.moe/v4/top/characters?limit=6");
+          setTopCharacters(response.data.data);
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      };
+  
+      fetchData(); // Llama a la función asíncrona interna
+    }, 500); // Espera 1.5 segundos antes de llamar a fetchData
+  
+    return () => clearTimeout(timer); // Limpiar el temporizador en la limpieza de efectos
   }, []);
+  
+  
 
   return (
     <Grid container>
