@@ -7,7 +7,6 @@ import { HeroComponent } from "../components/HeroComponent";
 export const Home = () => {
   return (
     <div>
-      <Navbar />
       <Grid container spacing={2} sx={{ color: "#fefae0" }}>
         {/* DIVIDIR EN COMPONENTE Hero */}
         <HeroComponent />
