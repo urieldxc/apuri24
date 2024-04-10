@@ -32,7 +32,7 @@ export const TopQuery = ({ query }) => {
 
   return (
     <Stack>
-      <ul style={{ listStyleType: "none", padding: 0 }}>
+      <ul style={{ listStyleType: "none", padding: 0}}>
         {topAnime.map((anime) => (
           <HorizontalAnimeCard key={crypto.randomUUID()} anime={anime} />
         ))}

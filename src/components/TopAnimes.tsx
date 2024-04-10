@@ -35,7 +35,7 @@ export const TopAnimes = () => {
   return (
     <Grid container>
       {topAnimeTypes.map((type) => (
-        <Grid item xs={6} md={3} px={6} key={crypto.randomUUID()}>
+        <Grid item xs={6} md={3} px={2} key={crypto.randomUUID()}>
           <Stack gap={2} direction={"column"} key={crypto.randomUUID()}>
             {queryChecker(type)}
             <TopQuery query={type} />

@@ -5,7 +5,7 @@ export const HorizontalAnimeCard = ({anime}) => {
   return (
     <Box
             component={"li"}
-            style={{ textDecoration: "none", margin: "20px -30px 20px -30px" }}
+            style={{ textDecoration: "none", margin: "20px 0px 20px 0px" }}
             key={crypto.randomUUID()}
           >
             <Stack direction={"row"} alignContent={"center"}>
