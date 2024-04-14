@@ -2,6 +2,7 @@ import { Box, Grid, Icon, Stack, Typography } from "@mui/material";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import Slider from "react-slick";
+import { SampleNextArrow, SamplePrevArrow } from "../utils/SampleNextArrow";
 
 
 import LiveTvOutlinedIcon from '@mui/icons-material/LiveTvOutlined';
@@ -20,8 +21,6 @@ export const HeroComponent = () => {
     try {
       const res = await axios.get("https://api.jikan.moe/v4/top/anime?filter=airing&limit=5");
       setTopAiring(res.data.data);
-      console.log(topAiring);
-      console.log(topAiring)
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -35,7 +34,8 @@ export const HeroComponent = () => {
     slidesToScroll: 1,
     adaptiveHeight: true,
     autoplay: true,
-    
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
   };
 
   // Hacer la llamada una vez al montar el componente, no en cada cambio de topAiring
@@ -47,14 +47,14 @@ export const HeroComponent = () => {
           {animeList.map((anime, i) => (
             <Box key={crypto.randomUUID()}>
               <Stack direction="row" sx={{ position: "relative", overflow: "hidden", minHeight: "500px", paddingX: 10 }}>
-                <Box sx={{ width: "50%", height: "600px", paddingTop: "10%" }}>
-                  <Typography>#{i + 1} Spotlight</Typography>
+                <Box sx={{ width: "50%", height: "700px", paddingTop: "10%" }}>
+                  <Typography color={"primary"}>#{i + 1} Spotlight</Typography>
                   <Typography variant="h3">{anime.title}</Typography>
                   <Stack direction="row" gap={2} mb={2}>
-                    <Typography><Icon><LiveTvOutlinedIcon/></Icon> {anime.media}</Typography>
-                    <Typography><Icon><AccessTimeOutlinedIcon/></Icon>{anime.duration}</Typography>
-                    <Typography><Icon><CalendarMonthOutlinedIcon/></Icon>{anime.year}</Typography>
-                    <Typography><Icon><PlayCircleOutlineOutlinedIcon /></Icon>{anime.airing ? "Airing" : "Not Airing"}</Typography>
+                    <Typography><Icon sx={{color: "rgb(221, 161, 94)"}}><LiveTvOutlinedIcon/></Icon> {anime.media}</Typography>
+                    <Typography><Icon sx={{color: "rgb(221, 161, 94)"}}><AccessTimeOutlinedIcon/></Icon>{anime.duration}</Typography>
+                    <Typography><Icon sx={{color: "rgb(221, 161, 94)"}}><CalendarMonthOutlinedIcon/></Icon>{anime.year}</Typography>
+                    <Typography><Icon sx={{color: "rgb(221, 161, 94)"}}><PlayCircleOutlineOutlinedIcon /></Icon>{anime.airing ? "Airing" : "Not Airing"}</Typography>
                   </Stack>
                   <Typography>{anime.synopsis}</Typography>
                 </Box>
@@ -86,7 +86,7 @@ export const HeroComponent = () => {
   {/* Imagen */}
   <img
     style={{
-      width: "120%",
+      width: "150%",
       height: "200%",
       objectFit: "cover", // Ajusta la imagen para cubrir completamente el contenedor
       position: "relative", // Establece la posición como relativa para que el z-index funcione

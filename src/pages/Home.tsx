@@ -12,7 +12,7 @@ export const Home = () => {
         <HeroComponent />
 
         {/* DIVIDIR EN COMPONENTE Trending y minicomponentes TopAiring, MostPopular, MostFavorite, LastCompleted */}
-        <Grid item xs={12} m={6}>
+        <Grid item xs={12} m={10}>
           <Stack spacing={6}>
             <Typography
               variant="h5"
@@ -26,7 +26,7 @@ export const Home = () => {
 
         {/* TOP ANIMES */}
 
-        <Grid item xs={12} my={4}>
+        <Grid item xs={12} my={4} mx={8}>
           <TopAnimes />
         </Grid>
       </Grid>
