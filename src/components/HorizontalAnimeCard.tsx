@@ -68,7 +68,13 @@ export const HorizontalAnimeCard = ({ anime }) => {
                 </Typography>
               </Box>
             </Stack>
-            <Button variant="outlined" size="small" sx={{justifySelf: 'flex-end'}}>Details</Button>
+            <Button variant="outlined" size="small" sx={{justifySelf: 'flex-end'}}>
+              <Link 
+              style={{ textDecoration: "none", color: "inherit" }}
+              to={`/anime/${anime.mal_id}`}>
+              Details
+              </Link>
+              </Button>
           </Stack>
         </Stack>
       </Stack>
